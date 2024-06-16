@@ -1,3 +1,4 @@
+import { JWT_SECRET } from './config/utils.js';
 const router = require("express").Router();
 const User = require("../models/userModel");
 const bcrypt = require("bcryptjs");
@@ -60,7 +61,7 @@ router.post("/login", async (req, res) => {
     }
 
     // create and assign a token
-    const token = jwt.sign({ userId: user._id }, process.env.jwt_secret, {
+    const token = jwt.sign({ userId: user._id }, JWT_SECRET, {
       expiresIn: "7d",
     });
 

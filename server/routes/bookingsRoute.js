@@ -1,5 +1,6 @@
+import { STRIPE_KEY } from './config/utils.js';
 const router = require("express").Router();
-const stripe = require("stripe")(process.env.stripe_key);
+const stripe = require("stripe")(STRIPE_KEY);
 const authMiddleware = require("../middlewares/authMiddleware");
 const Booking = require("../models/bookingModel");
 const Show = require("../models/showModel");

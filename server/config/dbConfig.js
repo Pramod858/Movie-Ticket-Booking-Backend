@@ -1,6 +1,7 @@
+import { MONGODB_URI } from './config/utils.js';
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', false)
-mongoose.connect(process.env.mongo_url)
+mongoose.connect(MONGODB_URI)
 
 const connection = mongoose.connection;
 
